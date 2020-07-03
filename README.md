@@ -21,7 +21,7 @@ Get High Don't Die is a service that allows users to track their adherence and f
 1. `pip install -r requirements.txt`
 1. Download [Neo4j](https://neo4j.com/) and start it up, launch a graph database
 1. get an api key from [openfda](https://open.fda.gov/apis/)
-1. start jupyter and run the cells in data_analysis/drug_explore.ipynb - this will upload the data into neo4j (you might have to fiddle with it a bit, this will take forever and timeout often)
+1. start jupyter and run the cells in `data_analysis/drug_explore.ipynb` - this will upload the data into neo4j (you might have to fiddle with it a bit, this will take forever and timeout often)
 1. open `frontend/index.html` in the browser and it should load the vue code to allow you search groups of medications for their interaction levels
 
 ## Challenges I ran into
