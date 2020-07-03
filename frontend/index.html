@@ -1,0 +1,171 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vuetify/dist/vuetify.min.css">
+</head>
+<body>
+    
+<div id="app">
+    <v-app id="inspire">
+      <v-content>
+        <v-container
+          fluid
+          fill-height
+        >
+          <v-layout
+            align-center
+            justify-center
+          >
+            <v-flex
+              md8
+            >
+              <v-card class="elevation-12">
+                <v-toolbar
+                  color="primary"
+                  dark
+                  flat
+                >
+                  <v-toolbar-title>Drugs {{runDrugs}}</v-toolbar-title>
+                
+                </v-toolbar>
+                <v-card-text>
+                    <v-combobox
+                    v-model="runDrugs"
+                    :items="formattedRows3"
+                    label="Select Drugs"
+                    multiple
+                  ></v-combobox>
+                    <v-expansion-panels>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header>Most Interactive</v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                <v-list >
+                                    <v-list-item-group v-model="item" color="primary">
+                                        <v-list-item>
+                                            <v-list-item-content>
+                                                <v-list-item-title>
+                                                    <v-container flex>
+                                                        <v-row>
+                                                            <v-col cols="3" right>
+                                                                Drug Name
+                                                            </v-col>
+                                                            <v-col cols="2" left>
+                                                            </v-col>
+                                                            <v-col cols="4" left>
+                                                                Drug Reaction
+                                                            </v-col>
+                                                            <v-col  cols="3" align-end>
+                                                                Incidence Count
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    
+                                                </v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                        <v-divider></v-divider>
+                                        <v-list-item v-for="(item, i) in formattedRows" :key="i">
+                                            <v-list-item-content>
+                                                <v-list-item-title>
+                                                    <v-container flex>
+                                                        <v-row>
+                                                            <v-col cols="3" right>
+                                                                {{item.drug}}
+                                                            </v-col>
+                                                            <v-col cols="2" left>
+                                                                &#8594;
+                                                            </v-col>
+                                                            <v-col cols="4" left>
+                                                                {{item.reaction}}
+                                                            </v-col>
+                                                            <v-col  cols="3" align-end>
+                                                                {{item.count}}
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    
+                                                </v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                        
+                                    </v-list-item-group>
+                                </v-list>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header>Drug Interactions</v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                <v-list >
+                                    <v-list-item-group v-model="item" color="primary">
+                                        <v-list-item>
+                                            <v-list-item-content>
+                                                <v-list-item-title>
+                                                    <v-container flex>
+                                                        <v-row>
+                                                            <v-col cols="3" right>
+                                                                Drug 1 Name
+                                                            </v-col>
+                                                            <v-col cols="2" left>
+                                                                Drug 2 Name
+                                                            </v-col>
+                                                            <v-col cols="4" left>
+                                                            </v-col>
+                                                            <v-col  cols="3" align-end>
+                                                                Interaction Count
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    
+                                                </v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                        <v-divider></v-divider>
+                                        <v-list-item v-for="(item, i) in formattedRows2" :key="i">
+                                            <v-list-item-content>
+                                                <v-list-item-title>
+                                                    <v-container flex>
+                                                        <v-row>
+                                                            <v-col cols="4" right>
+                                                                {{item.drug}}
+                                                            </v-col>
+                                                            <v-col cols="4" left>
+                                                                {{item.drug2}}
+                                                            </v-col>
+                                                            <v-col cols="2" left>
+                                                                &#8594;
+                                                            </v-col>
+                                                            <v-col  cols="2" align-end>
+                                                                {{item.count}}
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    
+                                                </v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                            
+                                    </v-list-item-group>
+                                </v-list>
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                  
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <!-- <v-btn color="primary">Login</v-btn> -->
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
+    <script src="app.js">
+        
+    </script>
+</body>
+</html>

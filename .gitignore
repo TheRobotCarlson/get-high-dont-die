@@ -1,5 +1,16 @@
-node_modules
-env/
-__pycache__/
-.ipynb_checkpoints/
-.vscode/
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node.js
+frontend/node_modules/
+
+
+# Python
+__pycache__
+backend/venv
+*.pyc
+
+# macOs
+.DS_Store
